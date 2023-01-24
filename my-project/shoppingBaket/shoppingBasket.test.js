@@ -1,0 +1,1 @@
+const ShoppingBasket = require('./shoppingBasket')
