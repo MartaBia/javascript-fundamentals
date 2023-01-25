@@ -1,1 +1,0 @@
-const Candy = require('./candy')
