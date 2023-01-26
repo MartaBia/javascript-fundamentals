@@ -1,11 +1,18 @@
 const Pokedex = require('./pokedex')
 
 describe('Pokedex', () => {
-  it('Can fetch the data for Jigglypuff', (done) => {
+  it('Returns the pokemon in the pokedex once is catched', (done) => {
     const pokedex = new Pokedex();
-    pokedex.getByNumber(39)
+    pokedex.catch('pikachu')
       .then((pokemon) => {
-        expect(pokemon.name).toEqual('jigglypuff');
+        expect(pokedex.all()).toEqual([
+          {
+            name: 'pikachu',
+            id: 25,
+            height: 4,
+            weight: 60,
+            types: [ 'electric' ]
+          }]);
         done();
       });
   });
