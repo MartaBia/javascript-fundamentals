@@ -8,9 +8,7 @@ class Weather {
 
   async load(city) {
     return this.client.fetchWeatherData(city)
-      .then((data) => {
-        this.weatherData = data;
-      });
+      .then((data) => this.weatherData = data); // {} not needed as it is done within a line
   };
 
   getWeatherData() {
