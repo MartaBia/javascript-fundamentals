@@ -2,23 +2,26 @@ const WeatherClient = require('./weatherClient');
 
 class Weather {
   constructor(client) {
-    this.client = client
+    this.weatherData = null;
+    this.client = client;
   };
 
-  load(city) {
+  async load(city) {
     return this.client.fetchWeatherData(city)
+      .then((data) => {
+        this.weatherData = data;
+      });
   };
 
   getWeatherData() {
-    return this.client
+    return this.weatherData;
   };
 };
 
-const weatherClient = new WeatherClient;
-const weather = new Weather(weatherClient);
-weather.load('Bristol')
-  .then(() => {
-    console.log(weather.getWeatherData())
-  })
+// Commented for tests
+// const weatherClient = new WeatherClient();
+// const weather = new Weather(weatherClient);
+// weather.load('Bristol')
+//   .then(() => console.log(weather.getWeatherData()));
 
 module.exports = Weather;

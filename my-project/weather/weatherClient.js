@@ -21,4 +21,11 @@ const client = new WeatherClient();
 //   console.log(`Temperature: ${weatherData.main.temp}`);
 // });
 
+// Await alternative that does not work as it is outside a function:
+// const florenceWeatherData = await client.fetchWeatherData('Florence');
+// console.log(`Weather data for ${florenceWeatherData.name}:`);
+// console.log(`Weather: ${florenceWeatherData.weather[0].main}`);
+// console.log(`Temperature: ${florenceWeatherData.main.temp}`);
+
+
 module.exports = WeatherClient;
