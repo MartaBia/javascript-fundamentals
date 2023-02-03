@@ -6,7 +6,7 @@ const fizzBuzzUntil = (number) => {
   while (i <= number) {
     console.log(fizzBuzz(i))
     i += 1
-  }
+  };
 };
 
 fizzBuzzUntil(15);
